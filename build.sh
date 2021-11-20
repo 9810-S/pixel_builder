@@ -6,8 +6,12 @@ echo "  Creating directories...  "
 mkdir -p android/eleven
 cd android/eleven
 echo "  Downloading Source...  "
+echo "  -------------------------------------  "
+echo " "
 repo init -u https://github.com/PixelExperience/manifest -b twelve > source_log.txt
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags > source_log.txt
+echo " "
+echo "  -------------------------------------  "
 echo "  Downloading manifests for 9810...  "
 cd .repo
 git clone https://github.com/9810-S/local_manifests -b aosp-12 > manifest_log.txt
