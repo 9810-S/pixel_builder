@@ -8,7 +8,7 @@ cd android/eleven
 echo "  Downloading Source...  "
 echo "  -------------------------------------  "
 echo " "
-repo init -u https://github.com/PixelExperience/manifest -b twelve > source_log.txt
+repo init -u https://github.com/9810-S/manifest -b twelve > source_log.txt
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags > source_log.txt
 echo " "
 echo "  -------------------------------------  "
@@ -20,8 +20,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags sync_log.
 rm -rf .repo
 echo "  Setting up build and cleaning up... "
 source build/envsetup.sh > source_log.txt
-rm -rf system/tools/mkbootimg
-git clone https://github.com/ArrowOS/android_system_tools_mkbootimg system/tools/mkbootimg > mkbootimg_log.txt
 echo "  Starting build... "
 brunch aosp_starlte-userdebug
 brunch aosp_star2lte-userdebug
