@@ -8,8 +8,8 @@ cd ~/pixel_builder/android/twelve
 echo "  Downloading Source...  "
 echo "  -------------------------------------  "
 echo " "
-repo init -u https://github.com/9810-S/manifest -b twelve > source_log.txt
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags > source_log.txt
+repo init -u https://github.com/PixelExperience/manifest -b twelve
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 echo " "
 echo "  -------------------------------------  "
 echo "  Downloading manifests for 9810...  "
