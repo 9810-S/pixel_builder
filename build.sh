@@ -17,6 +17,8 @@ cd ~/pixel_builder/android/twelve/.repo
 git clone https://github.com/9810-S/local_manifests -b aosp-12
 cd ~/pixel_builder/android/twelve
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags sync_log.txt
+rm -rf ~/pixel_builder/android/twelve/system/tools/mkbootimg
+git clone https://github.com/ArrowOS/android_system_tools_mkbootimg ~/pixel_builder/android/twelve/system/tools/mkbootimg
 rm -rf ~/pixel_builder/android/twelve/.repo
 echo "  Setting up build and cleaning up... "
 source build/envsetup.sh
