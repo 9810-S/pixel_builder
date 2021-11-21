@@ -3,8 +3,8 @@ echo "  -------------------------------------  "
 echo "  Pixel builder for 9810 by @dylanneve1  "
 echo "  -------------------------------------  "
 echo "  Creating directories...  "
-mkdir -p android/eleven
-cd android/eleven
+mkdir -p android/twelve
+cd ~/pixel_builder/android/twelve
 echo "  Downloading Source...  "
 echo "  -------------------------------------  "
 echo " "
@@ -13,14 +13,12 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags > source_
 echo " "
 echo "  -------------------------------------  "
 echo "  Downloading manifests for 9810...  "
-cd .repo
-git clone https://github.com/9810-S/local_manifests -b aosp-12 > manifest_log.txt
-cd ..
+cd ~/pixel_builder/android/twelve/.repo
+git clone https://github.com/9810-S/local_manifests -b aosp-12
+cd ~/pixel_builder/android/twelve
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags sync_log.txt
-rm -rf .repo
+rm -rf ~/pixel_builder/android/twelve/.repo
 echo "  Setting up build and cleaning up... "
-source build/envsetup.sh > source_log.txt
+source build/envsetup.sh
 echo "  Starting build... "
-brunch aosp_starlte-userdebug
-brunch aosp_star2lte-userdebug
-brunch aosp_crownlte-userdebug
+brunch aosp_starlte-userdebug && brunch aosp_star2lte-userdebug && brunch aosp_crownlte-userdebug
